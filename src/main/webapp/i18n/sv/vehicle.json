@@ -1,0 +1,26 @@
+{
+    "testproApp": {
+        "vehicle": {
+            "home": {
+                "title": "Vehicles",
+                "createLabel": "Skapa en ny Vehicle",
+                "createOrEditLabel": "Skapa eller ändra en Vehicle"
+            },
+            "created": "En ny Vehicle är skapad med id {{ param }}",
+            "updated": "En Vehicle är uppdaterad med id  {{ param }}",
+            "deleted": "En Vehicle är borttagen med id  {{ param }}",
+            "delete": {
+                "question": "Är du säker på att du vill ta bort Vehicle {{ id }}?"
+            },
+            "detail": {
+                "title": "Vehicle"
+            },
+            "reg": "Reg",
+            "status": "Status",
+            "online": "Online",
+            "time": "Time",
+            "coordinates": "Coordinates",
+            "customer": "Customer"
+        }
+    }
+}

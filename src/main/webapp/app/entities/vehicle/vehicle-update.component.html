@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-vehicle-heading" jhiTranslate="testproApp.vehicle.home.createOrEditLabel">Create or edit a Vehicle</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!vehicle.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="vehicle.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testproApp.vehicle.reg" for="field_reg">Reg</label>
+                    <input type="text" class="form-control" name="reg" id="field_reg"
+                        [(ngModel)]="vehicle.reg" required/>
+                    <div [hidden]="!(editForm.controls.reg?.dirty && editForm.controls.reg?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reg?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testproApp.vehicle.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                        [(ngModel)]="vehicle.status" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testproApp.vehicle.online" for="field_online">Online</label>
+                    <input type="checkbox" class="form-control" name="online" id="field_online"
+                        [(ngModel)]="vehicle.online" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testproApp.vehicle.time" for="field_time">Time</label>
+                    <input type="text" class="form-control" name="time" id="field_time"
+                        [(ngModel)]="vehicle.time" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testproApp.vehicle.coordinates" for="field_coordinates">Coordinates</label>
+                    <input type="text" class="form-control" name="coordinates" id="field_coordinates"
+                        [(ngModel)]="vehicle.coordinates" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="testproApp.vehicle.customer" for="field_customer">Customer</label>
+                    <select class="form-control" id="field_customer" name="customer" [(ngModel)]="vehicle.customer" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="customerOption.id === vehicle.customer?.id ? vehicle.customer : customerOption" *ngFor="let customerOption of customers; trackBy: trackCustomerById">{{customerOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

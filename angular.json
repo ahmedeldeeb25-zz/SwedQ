@@ -10,7 +10,7 @@
             "architect": {}
         }
     },
-    "defaultProject": "testpro",
+    "defaultProject": "SwedQ",
     "cli": {
         "packageManager": "npm"
     },

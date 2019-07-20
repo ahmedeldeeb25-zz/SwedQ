@@ -12,6 +12,7 @@ import { LoginModalService, AccountService, Account } from 'app/core';
 export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
+    dtOptions: DataTables.Settings = {};
 
     constructor(
         private accountService: AccountService,
@@ -24,6 +25,10 @@ export class HomeComponent implements OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
+
+        this.dtOptions = {
+            pagingType: 'full_numbers'
+        };
     }
 
     registerAuthenticationSuccess() {
