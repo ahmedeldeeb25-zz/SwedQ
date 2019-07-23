@@ -39,8 +39,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         TestproAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
         TestproEntityModule,
-        TestproAppRoutingModule,
-        DataTablesModule
+        TestproAppRoutingModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
     providers: [

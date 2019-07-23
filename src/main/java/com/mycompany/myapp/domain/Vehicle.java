@@ -36,7 +36,7 @@ public class Vehicle implements Serializable {
     private String status;
 
     @Column(name = "online")
-    private Boolean online;
+    private String online;
 
     @Column(name = "time")
     private String time;
@@ -83,16 +83,20 @@ public class Vehicle implements Serializable {
         this.status = status;
     }
 
-    public Boolean isOnline() {
+    public String isOnline() {
+        return online;
+    }
+    
+    public String getOnline() {
         return online;
     }
 
-    public Vehicle online(Boolean online) {
+    public Vehicle online(String online) {
         this.online = online;
         return this;
     }
 
-    public void setOnline(Boolean online) {
+    public void setOnline(String online) {
         this.online = online;
     }
 

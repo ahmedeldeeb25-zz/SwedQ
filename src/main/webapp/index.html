@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
+
 <head>
     <base href="./" />
     <meta charset="utf-8">
@@ -12,8 +13,11 @@
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
     <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
 </head>
+
 <body>
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -22,8 +26,16 @@
         <div class="app-loading">
             <div class="lds-css ng-scope">
                 <div class="lds-pacman">
-                    <div><div></div><div></div><div></div></div>
-                    <div><div></div><div></div><div></div></div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -33,7 +45,7 @@
     </noscript>
     <script type="text/javascript" language="javascript">
         // show an error message if the app loading takes more than 5 sec
-        window.onload=function() {
+        window.onload = function () {
             setTimeout(showError, 4000);
         }
         function showError() {
@@ -64,8 +76,9 @@
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
         ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>-->
-
-    <script src="../../../node_modules/jquery/dist/jquery.js"></script>
-    <script src="../../../node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 </body>
+
 </html>

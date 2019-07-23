@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { CustomerService } from 'app/entities/customer';
 export class VehicleUpdateComponent implements OnInit {
     vehicle: IVehicle;
     isSaving: boolean;
-
+    editMode = false;
     customers: ICustomer[];
 
     constructor(
@@ -27,8 +27,14 @@ export class VehicleUpdateComponent implements OnInit {
     ) {}
 
     ngOnInit() {
+        this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
+            if (paramMap.has('id')) {
+                this.editMode = true;
+            }
+        });
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ vehicle }) => {
+            console.log(vehicle);
             this.vehicle = vehicle;
         });
         this.customerService

@@ -79,3 +79,11 @@ library.add(faTrashAlt);
 library.add(faAsterisk);
 
 // jhipster-needle-add-element-to-vendor - JHipster will add new menu items here
+import './../content/js/jquery.js';
+import './../../../../node_modules/jquery/dist/jquery.js';
+import './../../../../node_modules/datatables.net/js/jquery.dataTables.js';
+
+import 'datatables.net/js/jquery.dataTables.js';
+import 'angular-datatables/src/angular-datatables.directive.js';
+import 'angular-datatables/src/angular-datatables.module.js';
+import 'angular-datatables/index.js';

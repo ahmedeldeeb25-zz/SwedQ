@@ -30,7 +30,7 @@
                 <constraints nullable="true" />
             </column>
 
-            <column name="online" type="boolean">
+            <column name="online" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
 

@@ -37,9 +37,9 @@ spring:
             indent-output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:testpro;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
-        username: testpro
-        password:
+        url: jdbc:mysql://localhost:3306/testpro?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+        username: root
+        password: root
         hikari:
             poolName: Hikari
             auto-commit: false
@@ -47,10 +47,9 @@ spring:
         console:
             enabled: false
     jpa:
-        database-platform: io.github.jhipster.domain.util.FixedH2Dialect
-        database: H2
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database: MYSQL
         show-sql: true
-        generate-ddl: true
         properties:
             hibernate.id.new_generator_mappings: true
             hibernate.connection.provider_disables_autocommit: true

@@ -91,7 +91,7 @@ public class VehicleResource {
      * @return the ResponseEntity with status 200 (OK) and with body the vehicle, or with status 404 (Not Found)
      */
     @GetMapping("/vehicles/{id}")
-    public ResponseEntity<Vehicle> getVehicle(@PathVariable Long id) {
+    public ResponseEntity<Vehicle> getVehicle(@PathVariable String id) {
         log.debug("REST request to get Vehicle : {}", id);
         Optional<Vehicle> vehicle = vehicleService.findOne(id);
         return ResponseUtil.wrapOrNotFound(vehicle);
@@ -104,9 +104,9 @@ public class VehicleResource {
      * @return the ResponseEntity with status 200 (OK)
      */
     @DeleteMapping("/vehicles/{id}")
-    public ResponseEntity<Void> deleteVehicle(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteVehicle(@PathVariable String id) {
         log.debug("REST request to delete Vehicle : {}", id);
-        vehicleService.delete(id);
+        vehicleService.delete(id); 
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert(ENTITY_NAME, id.toString())).build();
     }
 }
